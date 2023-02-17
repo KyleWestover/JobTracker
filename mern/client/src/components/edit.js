@@ -15,7 +15,7 @@ export default function Edit() {
   useEffect(() => {
     async function fetchData() {
       const id = params.id.toString();
-      const response = await fetch(`http://localhost:5000/record/${params.id.toString()}`);
+      const response = await fetch(`https://jobtracker-6ksu.onrender.com/record/${params.id.toString()}`);
 
       if (!response.ok) {
         const message = `An error has occured: ${response.statusText}`;
@@ -55,7 +55,7 @@ export default function Edit() {
     };
 
     // This will send a post request to update the data in the database.
-    await fetch(`http://localhost:5000/update/${params.id}`, {
+    await fetch(`https://jobtracker-6ksu.onrender.com/${params.id}`, {
       method: "POST",
       body: JSON.stringify(editedJob),
       headers: {
